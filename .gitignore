@@ -1,0 +1,42 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# OS generated files #
+######################
+.DS_Store
+Thumbs.db
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# Dependency directories #
+##########################
+node_modules/
+bower_components/
+
+# Build directories #
+#####################
+dist/
+build/
+
+# Environment variables #
+#########################
+.env
+
+# IDE files #
+#############
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# npm debug log files #
+#######################
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+nodemodules/
+out/
+.next/
