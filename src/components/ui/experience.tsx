@@ -52,7 +52,7 @@ export default function Experience() {
         }}
       >
         <Tab label="Uppsala Uni" />
-        <Tab label="Theagenio" />
+        <Tab label="Theageneio" />
       </Tabs>
 
       {/* RIGHT CONTENT */}
