@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 // import { ContainerScroll } from "../components/ui/container-scroll-animation";
 import Image from "next/image";
 
-// import { initializeApp } from "firebase/app";
+import { initializeApp } from "firebase/app";
 //import { getAnalytics } from "firebase/analytics";
 
 import { motion } from "framer-motion";
@@ -49,7 +49,7 @@ const firebaseConfig = {
   measurementId: process.env.MEASUREMENTID
 };
 
-// const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 //const analytics = getAnalytics(app);
 
 // Lamp Header
