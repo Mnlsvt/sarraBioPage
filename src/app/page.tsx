@@ -372,7 +372,7 @@ export function AnimatedPinDemo() {
               Click here to check out my resume.
             </span>
             <Image
-              src="/sarraki.jpeg"
+              src="/sarraki.png"
               alt="Pin container image"
               width={240} // Adjusted width for smaller size
               height={240} // Adjusted height for smaller size
