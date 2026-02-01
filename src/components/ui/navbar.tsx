@@ -67,7 +67,7 @@ export function Navbar() {
               'max-h-0 opacity-0 lg:max-h-none lg:opacity-100': !isMenuOpen,
               'max-h-screen opacity-100': isMenuOpen,
 
-              'absolute top-full left-0 w-full bg-slate-950 flex flex-col space-y-0 p-4 lg:space-y-0 lg:p-0': true,
+              'absolute top-full left-0 w-full bg-[#F5C9B0] flex flex-col space-y-0 p-4 lg:space-y-0 lg:p-0': true,
             }
           )}
         >

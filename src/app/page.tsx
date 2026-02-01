@@ -217,26 +217,25 @@ export function PixelatedCanvasDemo() {
   return (
     <div className="mx-auto mt-8">
       <PixelatedCanvas
-      src="/dna2.png"
-      width={500}
-      height={600}
-      cellSize={3}
-      dotScale={0.9}
-      shape="square"
-      backgroundColor="#0B3542"
-      dropoutStrength={0.4}
-      interactive
-      distortionStrength={5}
-      distortionRadius={80}
-      distortionMode="swirl"
-      followSpeed={0.2}
-      jitterStrength={4}
-      jitterSpeed={4}
-      sampleAverage
-      tintColor="#0B3542"
-      tintStrength={0.2}
-      className="rounded-xl"
-      
+        src="/dna2.png"
+        width={typeof window !== 'undefined' && window.innerWidth < 640 ? 300 : 500}
+        height={typeof window !== 'undefined' && window.innerWidth < 640 ? 400 : 600}
+        cellSize={3}
+        dotScale={0.9}
+        shape="square"
+        backgroundColor="#0B3542"
+        dropoutStrength={0.4}
+        interactive
+        distortionStrength={5}
+        distortionRadius={80}
+        distortionMode="swirl"
+        followSpeed={0.2}
+        jitterStrength={4}
+        jitterSpeed={4}
+        sampleAverage
+        tintColor="#0B3542"
+        tintStrength={0.2}
+        className="rounded-xl w-full h-auto max-w-sm sm:max-w-md md:max-w-2xl"
       />
     </div>
   );
@@ -245,17 +244,32 @@ export function PixelatedCanvasDemo() {
 
 // Flip Words Effect
 export function FlipWordsDemo() {
-  const words = ["hematology", "working with medical data", "helping people", "medical research & AI"];
- 
+  const words = [
+    "hematology",
+    "working with medical data",
+    "helping people",
+    "medical research & AI",
+  ];
+
   return (
-    <div className="h-[40rem] flex justify-center items-center px-4">
-      <div className="text-5xl mx-auto font-normal text-neutral-600 dark:text-neutral-400">
-        I love 
+    <div className="h-[30rem] flex justify-center items-center px-4">
+      <div 
+        className="
+          mx-auto font-normal text-neutral-600 dark:text-neutral-400
+          text-2xl
+          sm:text-xl
+          md:text-3xl
+          lg:text-4xl
+          text-center
+        "
+      >
+        I love{" "}
         <FlipWords words={words} />
       </div>
     </div>
   );
 }
+
 
 
 // My Timeline 
@@ -358,12 +372,17 @@ function TimelineDemo() {
 // Pin Container
 export function AnimatedPinDemo() {
   return (
-    <div className="h-[40rem] w-full flex items-center justify-center ">
+    <div className="h-[32rem] md:h-[40rem] w-full flex items-center justify-center px-4">
       <PinContainer
         title="My Resume ↪"
         href="/cv"
       >
-        <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[25rem] h-[25rem] ">
+        <div className="
+          flex flex-col items-center text-center
+          p-4 tracking-tight text-slate-100/50
+          w-[240px] sm:w-[280px] md:w-[320px]
+        ">
+
           <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-black">
             My Resume
           </h3>
@@ -374,10 +393,18 @@ export function AnimatedPinDemo() {
             <Image
               src="/sarraki.png"
               alt="Pin container image"
-              width={240} // Adjusted width for smaller size
-              height={240} // Adjusted height for smaller size
-                className="w-80 h-80 object-cover rounded-full mx-auto mt-3" // Changed to rounded-full for bubble shape and added mx-auto for centering
+              width={240}
+              height={240}
+              className="
+                mx-auto mt-3 
+                rounded-full 
+                object-cover 
+                w-[140px] h-[140px] 
+                sm:w-[180px] sm:h-[180px]
+                md:w-[220px] md:h-[220px]
+              "
             />
+
             </div>
           {/* <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500" /> */}
         </div>
@@ -549,6 +576,7 @@ export default function HomePage() {
   const { ref: timelineRef, inView: timelineInView } = useInView({ triggerOnce: true, threshold: 0.2 });
   const { ref: pixelatedRef, inView: pixelatedView } = useInView({ triggerOnce: true, threshold: 0.2 });
   const { ref: textGenRef, inView: textGenInView } = useInView({ triggerOnce: true, threshold: 0.2 });
+  // const { ref: dnaRef, inView: dnaInView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
     const [toolsTextSize, setToolsTextSize] = useState("text-2xl")
 
@@ -581,27 +609,55 @@ export default function HomePage() {
       <MeteorsDemo/>
       <div className="pb-10"></div>
         <LampDemo/>
-      <div className="grid grid-cols-2 gap-4 pl-8 w-full">
-        {/* <PixelatedCanvasDemo/> */}
-        <div ref={pixelatedRef}>
-            {pixelatedView && (
-            // Hover Up and Down
-              <motion.div
+      <div className="relative w-full px-6 md:px-8">
+      {/* --- BACKGROUND IMAGE ON MOBILE, GRID ON DESKTOP --- */}
+      <div className="md:grid md:grid-cols-2 md:gap-6 items-center">
+        
+        {/* DNA IMAGE */}
+        <div 
+          ref={pixelatedRef}
+          className="
+            absolute md:relative inset-0 md:inset-auto
+            opacity-30 md:opacity-100   /* faded on mobile */
+            pointer-events-none md:pointer-events-auto
+          "
+        >
+          {pixelatedView && (
+            <motion.div
               animate={{ y: [0, -20, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              >
+              className="w-full h-full flex justify-center"
+            >
               <PixelatedCanvasDemo />
-              </motion.div>
-            )}
+            </motion.div>
+          )}
         </div>
-        {/* <div className="mt-30"><TextGenerateEffect duration={0.9} words={generatedWords}/></div> */}
-        <div className="mt-30" ref={textGenRef}>
-          {textGenInView && <TextGenerateEffect duration={0.5} words={generatedWords} />}
+
+        {/* TEXT ON TOP (FULL WIDTH ON MOBILE) */}
+        <div 
+          ref={textGenRef}
+          className="
+            relative z-10 
+            w-full md:w-auto
+            flex justify-center md:block
+            py-16 md:py-0
+          "
+        >
+          {textGenInView && (
+            <div className="max-w-xl text-center md:text-left">
+              <TextGenerateEffect 
+                duration={0.5} 
+                words={generatedWords} 
+              />
+            </div>
+          )}
         </div>
       </div>
+    </div>
+
         <FlipWordsDemo/>
         {/* <TimelineDemo/> */}
-        <div className="mb-10"><Experience /></div>
+        <div className="mb-30"><Experience /></div>
         <div className="mb-10"><DNAMarquee /></div>
         <AnimatedPinDemo/>
       
