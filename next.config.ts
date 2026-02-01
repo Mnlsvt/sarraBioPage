@@ -1,20 +1,9 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
-  output: 'export'
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
 };
 
-// module.exports = {
-//   images: {
-//     remotePatterns: [
-//       {
-//         protocol: "https",
-//         hostname: "raw.githubusercontent.com",
-//         pathname: "/Mnlsvt/**",
-//       },
-//     ],
-//   },
-// };
-
-export default nextConfig;
+module.exports = nextConfig;
