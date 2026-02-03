@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { useEffect, useState } from "react";
 
 // import { ContainerScroll } from "../components/ui/container-scroll-animation";
@@ -12,22 +11,13 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { LampContainer } from "@/components/ui/lamp";
 
-// import { MacbookScroll } from "../components/ui/macbook-scroll";
-import Link from "next/link";
-
 import { TextGenerateEffect } from "../components/ui/text-generate-effect";
-
-// import { AnimatedTooltip } from "../components/ui/animated-tooltip";
-
-import { Timeline } from "@/components/ui/timeline";
 
 import { Navbar} from "@/components/ui/navbar";
 
 import { useInView } from 'react-intersection-observer'; // Lazy Load
 
 import { PixelatedCanvas } from "@/components/ui/pixelated-canvas"; // Pixelated Image
-
-// import { Carousel, Card } from "../components/ui/apple-cards-carousel";
 
 import { Meteors } from "@/components/ui/meteors"; // Meteors Effect
 
@@ -94,124 +84,6 @@ export function MeteorsDemo() {
 }
 
 
-// Tablet CV
-// function HeroScrollDemo() {
-//   return (
-//     <div className="flex flex-col overflow-hidden">
-//       <ContainerScroll
-//         titleComponent={
-//           <>
-//             <h1 className="text-4xl font-semibold text-white dark:text-white mb-10">
-//               Click below to <br />
-//               <span className="text-4xl md:text-[4rem] font-bold mt-1 leading-none">
-//                 Check my CV
-//               </span>
-//             </h1>
-//           </>
-//         }
-//       >
-//         <a href="/cv" className="mx-auto rounded-2xl object-cover h-full object-left-top"><Image
-//           src={`https://raw.githubusercontent.com/Mnlsvt/bio-page/main/public/images/cv-image.png`}
-//           alt="cv image"
-//           height={720}
-//           width={1400}
-//           draggable={false}
-//           unoptimized
-//         /></a>
-//       </ContainerScroll>
-//     </div>
-//   );
-// }
-
-// Projects Carousel
-// function AppleCardsCarouselDemo() {
-//   const cards = data.map((card, index) => (
-//     <Card key={card.src} card={card} index={index} />
-//   ));
-
-//   return (
-//     <div className="w-full h-full py-20">
-//       <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-white dark:text-white font-sans">
-//         My Projects.
-//       </h2>
-//       <Carousel items={cards} />
-//     </div>
-//   );
-// }
-
-// const DummyContent = () => {
-//   return (
-//     <>
-//       {[...new Array(3).fill(1)].map((_, index) => {
-//         return (
-//           <div
-//             key={"dummy-content" + index}
-//             className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
-//           >
-//             <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
-//               <span className="font-bold text-neutral-700 dark:text-neutral-200">
-//                 The first rule of Apple club is that you boast about Apple club.
-//               </span>{" "}
-//               Keep a journal, quickly jot down a grocery list, and take amazing
-//               class notes. Want to convert those notes to text? No problem.
-//               Langotiya jeetu ka mara hua yaar is ready to capture every
-//               thought.
-//             </p>
-//             <Image
-//               src="/images/cv-image.png"
-//               alt="Macbook mockup from Aceternity UI"
-//               height="500"
-//               width="500"
-//               className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
-//             />
-//           </div>
-//         );
-//       })}
-//     </>
-//   );
-// };
- 
-// const data = [
-//   {
-//     category: "Artificial Intelligence",
-//     title: "You can do more with AI.",
-//     src: "/images/cv-image.png",
-//     content: <DummyContent />,
-//   },
-//   {
-//     category: "Productivity",
-//     title: "Enhance your productivity.",
-//     src: "/images/cv-image.png",
-//     content: <DummyContent />,
-//   },
-//   {
-//     category: "Product",
-//     title: "Launching the new Apple Vision Pro.",
-//     src: "/images/cv-image.png",
-//     content: <DummyContent />,
-//   },
- 
-//   {
-//     category: "Product",
-//     title: "Maps for your iPhone 15 Pro Max.",
-//     src: "/images/cv-image.png",
-//     content: <DummyContent />,
-//   },
-//   {
-//     category: "iOS",
-//     title: "Photography just got better.",
-//     src: "/images/cv-image.png",
-//     content: <DummyContent />,
-//   },
-//   {
-//     category: "Hiring",
-//     title: "Hiring for a Staff Software Engineer",
-//     src: "/images/cv-image.png",
-//     content: <DummyContent />,
-//   },
-// ];
-
-
 // Pixelated Image
 export function PixelatedCanvasDemo() {
   return (
@@ -270,103 +142,6 @@ export function FlipWordsDemo() {
   );
 }
 
-
-
-// My Timeline 
-function TimelineDemo() {
-  const data = [
-    {
-      title: "2025",
-      content: (
-        <div>
-          <p className="text-white dark:text-white text-xs md:text-xl font-bold mb-8">
-            September 2025 - Present
-          </p>
-          <p className="text-white dark:text-white text-lg md:text-sm font-bold mb-4">
-            <a href="https://www.uu.se/en/study/programme/masters-programme-precision-medicine" target="_blank" className="hover:text-blue-500">Masters in Precision Medicine</a>
-          </p>
-            <p className="text-white dark:text-white text-xs md:text-sm font-normal mb-6">
-            Started a Master's program in Precision Medicine at the Uppsala University.
-            </p>
-            <div className="flex justify-center">
-            {/* Evline image */}
-            <a target="_blank" href="https://www.uu.se/en/study/programme/masters-programme-precision-medicine"><Image
-              src="/blood.gif"
-              alt="masters program image"
-              width={2000}
-              height={2000}
-              className="rounded-lg object-cover w-full h-full mde:h-44 lg:h-30 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] mb-12"
-              style={{ objectFit: 'contain' }}
-              unoptimized
-            /></a>
-            </div>
-        </div>
-      ),
-    },
-    {
-      title: "2024",
-      content: (
-        <div>
-          <p className="text-white dark:text-white text-xs md:text-xl font-bold mb-8">
-            November 2022 - April 2023
-          </p>
-          <p className="text-white dark:text-white text-lg md:text-sm font-bold mb-4">
-            <a href="https://theageneio.gov.gr/en/thoracic-surgery/" target="_blank" className="hover:text-blue-500">Biomedical Scientist - 6 Month Internship</a>
-          </p>
-            <p className="text-white dark:text-white text-xs md:text-sm font-normal mb-6">
-            Worked as a biomedical scientist at “Theageneio” Cancer Hospital of Thessaloniki
-            </p>
-            <div className="flex justify-center">
-            {/* Evline image */}
-            <a target="_blank" href="https://theageneio.gov.gr/en/thoracic-surgery/"><Image
-              src={`https://cdn.dribbble.com/userupload/20387933/file/original-eb7ba7ee1856594069a5bbc3373a47a3.gif`}
-              alt="masters program image"
-              width={2000}
-              height={2000}
-              className="rounded-lg object-cover w-full h-full mde:h-44 lg:h-30 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] mb-12"
-              style={{ objectFit: 'contain' }}
-              unoptimized
-            /></a>
-            </div>
-        </div>
-      ),
-    },
-    {
-      title: "2022",
-      content: (
-        <div>
-          <p className="text-white dark:text-white text-xs md:text-xl font-bold mb-8">
-            November 2022 - April 2023
-          </p>
-          <p className="text-white dark:text-white text-lg md:text-sm font-bold mb-4">
-            <a href="https://theageneio.gov.gr/en/thoracic-surgery/" target="_blank" className="hover:text-blue-500">Biomedical Scientist - 6 Month Internship</a>
-          </p>
-            <p className="text-white dark:text-white text-xs md:text-sm font-normal mb-6">
-            Worked as a biomedical scientist at “Theageneio” Cancer Hospital of Thessaloniki
-            </p>
-            <div className="flex justify-center">
-            {/* Evline image */}
-            <a target="_blank" href="https://theageneio.gov.gr/en/thoracic-surgery/"><Image
-              src={`https://cdn.dribbble.com/userupload/20387933/file/original-eb7ba7ee1856594069a5bbc3373a47a3.gif`}
-              alt="masters program image"
-              width={2000}
-              height={2000}
-              className="rounded-lg object-cover w-full h-full mde:h-44 lg:h-30 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] mb-12"
-              style={{ objectFit: 'contain' }}
-              unoptimized
-            /></a>
-            </div>
-        </div>
-      ),
-    },
-  ];
-  
-  return (
-    <div className="w-full">
-      <Timeline data={data} />
-    </div>
-  ); 
-}
 
 
 // Pin Container
@@ -495,80 +270,6 @@ Advancing the field of oncology by using cutting-edge research
 approaches, such as personalized diagnostic and treatment techniques, is
 my major aim.`
 
-// technologies - tools
-const people = [
-  {
-    id: 1,
-    name: "Python",
-    designation: "",
-    image: "https://raw.githubusercontent.com/Mnlsvt/bio-page/main/public/images/python.png",
-  },
-  {
-    id: 2,
-    name: "JavaScript",
-    designation: "",
-    image:
-      "https://raw.githubusercontent.com/Mnlsvt/bio-page/main/public/images/js.png",
-  },
-  {
-    id: 3,
-    name: "TypeScript",
-    designation: "",
-    image:
-      "https://raw.githubusercontent.com/Mnlsvt/bio-page/main/public/images/typescript.png",
-  },
-  {
-    id: 4,
-    name: "Linux",
-    designation: "",
-    image:
-      `https://raw.githubusercontent.com/Mnlsvt/bio-page/main/public/images/linux.png`,
-  },
-  {
-    id: 5,
-    name: "Git & Github",
-    designation: "",
-    image:
-      "https://raw.githubusercontent.com/Mnlsvt/bio-page/main/public/images/git.png",
-  },
-  {
-    id: 6,
-    name: "React",
-    designation: "",
-    image:
-      "https://raw.githubusercontent.com/Mnlsvt/bio-page/main/public/images/react.png",
-  },
-  {
-    id: 7,
-    name: "NodeJS",
-    designation: "",
-    image:
-      "https://raw.githubusercontent.com/Mnlsvt/bio-page/main/public/images/nodejs.png",
-  },
-  {
-    id: 8,
-    name: "Google Cloud",
-    designation: "",
-    image:
-      "https://raw.githubusercontent.com/Mnlsvt/bio-page/main/public/images/gcloud.jpg",
-  },
-  {
-    id: 9,
-    name: "Firebase",
-    designation: "",
-    image:
-      "https://raw.githubusercontent.com/Mnlsvt/bio-page/main/public/images/firebase.png",
-  },
-];
- 
-function AnimatedTooltipPreview() {
-  return (
-    <div className="flex flex-wrap items-center justify-center mb-10 mt-12 w-full">
-      {/* <AnimatedTooltip items={people} /> */}
-    </div>
-  );
-}
-
 export default function HomePage() {
 
   // Lazy Load
@@ -656,16 +357,10 @@ export default function HomePage() {
     </div>
 
         <FlipWordsDemo/>
-        {/* <TimelineDemo/> */}
         <div className="mb-30"><Experience /></div>
         <div className="mb-10"><DNAMarquee /></div>
         <AnimatedPinDemo/>
       
-
-      {/* <AnimatedTooltipPreview/> */}
-      {/* <AppleCardsCarouselDemo/> */}
-      {/* <HeroScrollDemo/> */}
-      {/* <MacbookScrollDemo /> */}
     </div>
   );
 }

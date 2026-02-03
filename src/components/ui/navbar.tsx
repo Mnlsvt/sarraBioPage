@@ -81,11 +81,12 @@ export function Navbar() {
               Projects
             </Link>
           </li> */}
-          <li>
+          {/* Contact button */}
+          {/* <li>
             <Link href="/contact" className="text-[#0B3542] hover:text-white transition">
               Contact
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </nav>
